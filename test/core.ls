@@ -1,4 +1,3 @@
-console.log __dirname
 require! {
   chai: {assert}:c
   '../build/core': _

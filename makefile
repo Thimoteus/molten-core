@@ -20,7 +20,7 @@ clean:
 	@rm -rf $(BUILD)
 	@rm -rf coverage
 
-test:
+test: build
 	@echo "Running tests ..."
 	@$(MOCHA) --compilers ls:$(LS) --reporter spec
 

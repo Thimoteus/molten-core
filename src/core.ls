@@ -1,7 +1,9 @@
 ## Molten Core is an expansion of prelude-ls with functions I've needed in
 ## more than one place.
 
-global <<< require 'prelude-ls'
+require! {
+  'prelude-ls': {flip, any, lines, unlines, words, unwords, apply}
+}
 
 ## Arrays
 ## ------
@@ -50,13 +52,13 @@ match-all = (re, str) -->
 ## global search for a regular expression `rx` and replace with a string `sub`
 replace-all = (rx, sub, str) -->
   ## creates an array of lines, then for each line creates an array of words
-  str-matrix = str |> lines |> map words
+  str-matrix = str |> lines |> map2 words
   ## check if any word tests positive for the regular expression
   while any (any (rx.test _)), str-matrix
     ## replace the first occurance of the match with the substitution
-    str-matrix = map (map (.replace rx, sub)), str-matrix
+    str-matrix = map2 (map2 (.replace rx, sub)), str-matrix
   ## glue the words back into lines, then glue the lines back into a paragraph
-  str-matrix |> map unwords |> unlines
+  str-matrix |> map2 unwords |> unlines
 
 ## Functions
 ## ---------
@@ -100,4 +102,4 @@ module.exports =
   repeat-fn: repeat-fn
   repeat-fn1: repeat-fn1
   repeat-fn2: repeat-fn2
-
+module.exports <<< require 'prelude-ls'
