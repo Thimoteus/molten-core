@@ -4,7 +4,7 @@
   "description": "A small library with some useful functions.",
   "main": "build/core.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test"
   },
   "repository": {
     "type": "git",
