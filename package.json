@@ -1,0 +1,35 @@
+{
+  "name": "molten-core",
+  "version": "1.0.0",
+  "description": "A small library with some useful functions.",
+  "main": "build/core.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Thimoteus/molten-core"
+  },
+  "keywords": [
+    "core"
+  ],
+  "author": "Thimoteus",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/Thimoteus/molten-core/issues"
+  },
+  "homepage": "https://github.com/Thimoteus/molten-core",
+  "dependencies": {
+    "prelude-ls": "^1.1.1"
+  },
+  "devDependencies": {
+    "LiveScript": "^1.3.1",
+    "chai": "^2.0.0",
+    "browserify": "^8.1.3",
+    "grunt": "^0.4.5",
+    "grunt-livescript": "^0.5.4",
+    "istanbul": "^0.3.5",
+    "mocha": "^2.1.0",
+    "uglify-js": "^2.4.16"
+  }
+}
