@@ -9,7 +9,6 @@ describe 'Arrays', ->
   #describe '#map2', ->
   #it 'should preserve the value being iterated over', (done)  ->
   #delay = ->
-
   describe '#push', ->
     they 'should add an element to an array\'s end', ->
       arr = _.push [ 1 to 3 ], 4
@@ -29,6 +28,11 @@ describe 'Arrays', ->
       arr = _.unite arr1, arr2
       assert.sameMembers arr, [ 0 to 9 ]
 
+  describe '#element-of', ->
+    they 'should return true iff an element is in the array, else false', ->
+      assert.is-true _.element-of 5 [1 to 10]
+      assert.is-false _.element-of 15 [1 to 10]
+
 describe 'RegExps', ->
 
   describe '#test', ->
@@ -42,6 +46,16 @@ describe 'RegExps', ->
       assert.isFalse _.test rx, str
 
 describe 'Strings', ->
+
+  describe '#encode64', ->
+    they 'should properly encode a string to base64', ->
+      str = 'super secret message'
+      assert.equal 'c3VwZXIgc2VjcmV0IG1lc3NhZ2U=' _.encode64 str
+
+  describe '#decode64', ->
+    they 'should properly decode a base64 string', ->
+      str = 'c3VwZXIgc2VjcmV0IG1lc3NhZ2U='
+      assert.equal 'super secret message', _.decode64 str
 
   describe '#substr', ->
     they 'should return true when tested against a substring', ->

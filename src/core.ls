@@ -20,6 +20,9 @@ pull = (arr, el) --> [ el ] ++ arr
 ## ordinal sum of two (finite) arrays
 unite = (arr1, arr2) --> arr1 ++ arr2
 
+## checks if `x` is in `xs`
+element-of = (x, xs) --> x in xs
+
 ## RegExps
 ## -------
 
@@ -27,6 +30,14 @@ test = (rx, str) --> rx.test str
 
 ## Strings
 ## -------
+
+encode64 = (str) ->
+  a = new Buffer str
+  a.toString 'base64'
+
+decode64 = (str64) ->
+  a = new Buffer str64, 'base64'
+  a.toString!
 
 ## test for whether `sub` appears in `str`
 substr = (sub, str) -->
@@ -90,15 +101,22 @@ repeat-fn2 = (t, f, n, args) -->
 
 ## exports
 module.exports =
+  # arrays
   map2: map2
   push: push
   pull: pull
   unite: unite
+  element-of: element-of
+  # regexps
   test: test
+  # strings
+  encode64: encode64
+  decode64: decode64
   substr: substr
   supstr: supstr
   match-all: match-all
   replace-all: replace-all
+  # functions
   repeat-fn: repeat-fn
   repeat-fn1: repeat-fn1
   repeat-fn2: repeat-fn2
