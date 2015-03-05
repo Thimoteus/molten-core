@@ -2,7 +2,7 @@
 ## more than one place.
 
 require! {
-  'prelude-ls': {flip, any, lines, unlines, words, unwords, apply}
+  'prelude-ls': {flip, any, lines, unlines, words, unwords, apply, fold1}
 }
 
 ## Arrays
@@ -74,6 +74,10 @@ replace-all = (rx, sub, str) -->
 ## Functions
 ## ---------
 
+compose = (...fs) ->
+  compose-two = (f, g) -> f . g
+  fold1 compose-two, fs
+
 ## Repeats `f` every `t` milliseconds.
 ## Takes optional array of arguments `args` for `f`.
 repeat-fn = (t, f, args) -->
@@ -117,6 +121,7 @@ module.exports = {
   match-all
   replace-all
   # functions
+  compose
   repeat-fn
   repeat-fn1
   repeat-fn2

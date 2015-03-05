@@ -89,4 +89,9 @@ describe 'Strings', ->
       test-str = 'John said Jimmy would only go if Jimmy could talk to Judy.'
       assert.strictEqual str2, test-str
 
-#describe 'Functions', ->
+describe 'Functions', ->
+
+  describe '#compose', ->
+    they 'should be able to compose functions', ->
+      f = _.compose (+ 2), (* 3), (- 4)
+      assert.equal -4 f 2
