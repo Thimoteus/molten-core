@@ -28,10 +28,10 @@ describe 'Arrays', ->
       arr = _.unite arr1, arr2
       assert.sameMembers arr, [ 0 to 9 ]
 
-  describe '#element-of', ->
+  describe '#includes', ->
     they 'should return true iff an element is in the array, else false', ->
-      assert.is-true _.element-of 5 [1 to 10]
-      assert.is-false _.element-of 15 [1 to 10]
+      assert.is-true _.includes [1 to 10] 5
+      assert.is-false _.includes [1 to 10] 15
 
 describe 'RegExps', ->
 

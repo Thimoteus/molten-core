@@ -21,7 +21,7 @@ pull = (arr, el) --> [ el ] ++ arr
 unite = (arr1, arr2) --> arr1 ++ arr2
 
 ## checks if `x` is in `xs`
-element-of = (x, xs) --> x in xs
+includes = (xs, x) --> x in xs
 
 ## RegExps
 ## -------
@@ -100,24 +100,26 @@ repeat-fn2 = (t, f, n, args) -->
    fn!
 
 ## exports
-module.exports =
+module.exports = {
   # arrays
-  map2: map2
-  push: push
-  pull: pull
-  unite: unite
-  element-of: element-of
+  map2
+  push
+  pull
+  unite
+  includes
   # regexps
-  test: test
+  test
   # strings
-  encode64: encode64
-  decode64: decode64
-  substr: substr
-  supstr: supstr
-  match-all: match-all
-  replace-all: replace-all
+  encode64
+  decode64
+  substr
+  supstr
+  match-all
+  replace-all
   # functions
-  repeat-fn: repeat-fn
-  repeat-fn1: repeat-fn1
-  repeat-fn2: repeat-fn2
+  repeat-fn
+  repeat-fn1
+  repeat-fn2
+}
+
 module.exports <<< require 'prelude-ls'
