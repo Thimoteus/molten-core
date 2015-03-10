@@ -38,9 +38,7 @@
     return a.toString();
   };
   substr = curry$(function(sub, str){
-    var rx;
-    rx = new RegExp(sub);
-    return test(rx, str);
+    return 0 <= str.indexOf(sub);
   });
   supstr = flip(substr);
   matchAll = curry$(function(re, str){
@@ -108,6 +106,7 @@
     };
     return fn();
   });
+  import$(module.exports, require('prelude-ls'));
   module.exports = {
     map2: map2,
     push: push,
@@ -126,7 +125,6 @@
     repeatFn1: repeatFn1,
     repeatFn2: repeatFn2
   };
-  import$(module.exports, require('prelude-ls'));
   function curry$(f, bound){
     var context,
     _curry = function(args) {

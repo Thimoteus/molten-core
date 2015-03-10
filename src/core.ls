@@ -41,8 +41,7 @@ decode64 = (str64) ->
 
 ## test for whether `sub` appears in `str`
 substr = (sub, str) -->
-  rx = new RegExp sub
-  test rx, str
+  0 <= str.index-of sub
 
 ## test for whether `str` contains `sub`
 supstr = flip substr
@@ -103,6 +102,8 @@ repeat-fn2 = (t, f, n, args) -->
       apply f, args
    fn!
 
+module.exports <<< require 'prelude-ls'
+
 ## exports
 module.exports = {
   # arrays
@@ -126,5 +127,3 @@ module.exports = {
   repeat-fn1
   repeat-fn2
 }
-
-module.exports <<< require 'prelude-ls'
