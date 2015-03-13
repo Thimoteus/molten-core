@@ -107,24 +107,23 @@
     return fn();
   });
   import$(module.exports, require('prelude-ls'));
-  module.exports = {
-    map2: map2,
-    push: push,
-    pull: pull,
-    unite: unite,
-    includes: includes,
-    test: test,
-    encode64: encode64,
-    decode64: decode64,
-    substr: substr,
-    supstr: supstr,
-    matchAll: matchAll,
-    replaceAll: replaceAll,
-    compose: compose,
-    repeatFn: repeatFn,
-    repeatFn1: repeatFn1,
-    repeatFn2: repeatFn2
-  };
+  ref$ = module.exports;
+  ref$.map2 = map2;
+  ref$.push = push;
+  ref$.pull = pull;
+  ref$.unite = unite;
+  ref$.includes = includes;
+  ref$.test = test;
+  ref$.encode64 = encode64;
+  ref$.decode64 = decode64;
+  ref$.substr = substr;
+  ref$.supstr = supstr;
+  ref$.matchAll = matchAll;
+  ref$.replaceAll = replaceAll;
+  ref$.compose = compose;
+  ref$.repeatFn = repeatFn;
+  ref$.repeatFn1 = repeatFn1;
+  ref$.repeatFn2 = repeatFn2;
   function curry$(f, bound){
     var context,
     _curry = function(args) {

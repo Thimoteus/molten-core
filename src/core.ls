@@ -105,7 +105,7 @@ repeat-fn2 = (t, f, n, args) -->
 module.exports <<< require 'prelude-ls'
 
 ## exports
-module.exports = {
+module.exports <<< {
   # arrays
   map2
   push
